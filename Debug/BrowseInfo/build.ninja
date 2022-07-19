@@ -1,0 +1,130 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\_init.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\_init.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\xy --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\xy_figure.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\xy_figure.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\xy --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\xy_main.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\xy_main.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\xy --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fsmc.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fsmc.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\Util.c -xcl_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.xcl -macro_file C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\Util.c -D STM32F40_41xxx -D USE_STDPERIPH_DRIVER -o C$:\Users\내컴퓨터\Desktop\졸작1\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Include\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\ -I C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\inc\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.tmp
+  rspfile_name = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.xcl.rsp
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\_init.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\xy_figure.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\xy_main.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fsmc.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.pbi : INDEXER C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.xcl |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Libraries\Util.c
+  flags = -out=C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.pbi -f C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.xcl
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy.pbw : MAKEBROWSE C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy.pbd
+  flags = C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy.pbd -output C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy.pbw
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part0.pbi : PDBLINK C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.pbi |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.pbi $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.pbi
+  flags = -M C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part0.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\_init.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_figure.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy\xy_main.pbi
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part1.pbi : PDBLINK C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.pbi |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.pbi $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.pbi
+  flags = -M C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part1.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_fsmc.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_gpio.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_rcc.pbi
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part2.pbi : PDBLINK C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.pbi |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.pbi $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.pbi
+  flags = -M C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part2.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\stm32f4xx_spi.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\system_stm32f4xx.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\Util.pbi
+
+build C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy.pbd : PDBLINK C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part0.pbi |  $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part1.pbi $
+C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part2.pbi
+  flags = -M C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy.pbd C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part0.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part1.pbi C$:\Users\내컴퓨터\Desktop\졸작1\Debug\BrowseInfo\xy_part2.pbi
+
