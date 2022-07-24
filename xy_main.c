@@ -18,7 +18,7 @@ uint8_t y_dir = 3;     //위 방향 = 0;  ,  아래 방 향 1
 
 
 //usart data를 위한 변수들
-int save_data[5000];     //32000
+int save_data[10000];     //32000
 char vector_data;       //pc로부터 데이터를 받는 변수 char형
 int k;             //배열 +시키기 위한 변수 
 
@@ -37,6 +37,11 @@ int y_flag=0;
 
 int x_home = 0;
 int y_home = 0;
+
+int Move_Mode[1000];
+int Is_Bezier_End=0;
+int Is_Bezier_Make=0;
+int b_i=0;
 
 int main(void)
 {
@@ -82,21 +87,39 @@ int main(void)
           {
             t_i++;
             GPIOF->ODR ^= (1<<4);            
+          }          
+                      
+          //직선 모드 
+          if(Move_Mode[j] == 1){
+              j++;            
+              Direction();
+              Straight();            
           }
           
-            
-          j++;
-          
-          // if 베지어 
-          // { 베지어 함수 }
-          
-          // else if 직선동작 
-          Direction();
-          Straight();
-          
-          
-          
-          move_flag = 0;
+          //베지어 모드
+          else if(Move_Mode[j] == 2) 
+          {
+              //처음에만 Bezier 배열 생성
+              if(Is_Bezier_Make==0)
+              {
+                Bezier_Coordinate_Make();
+                Is_Bezier_Make = 1;
+
+              }
+              
+              Bezier_Direction();
+              Bezier_Straight();
+
+              
+              if(Is_Bezier_End == 1)
+              {
+                j++;
+                Is_Bezier_End = 0;
+                Is_Bezier_Make = 0;
+                b_i=0;
+              }
+          }
+          move_flag = 0;          
 
           
         }
@@ -227,8 +250,8 @@ void USART1_IRQHandler(void)
           {
              check_flag = 1;
              usart_count = k;     
-
           }
+          
           k++;
           
           

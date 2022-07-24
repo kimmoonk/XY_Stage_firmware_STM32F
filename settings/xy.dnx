@@ -78,8 +78,7 @@
         <Bp1>_ 0 "STD_CODE2" "{$PROJ_DIR$\xy_test4_usart.c}.17.5" 0 0 1 "" 0 ""</Bp1>
         <Bp2>_ 0 "STD_CODE2" "{$PROJ_DIR$\xy_test4_usart_test22222.c}.158.1" 0 0 1 "" 0 ""</Bp2>
         <Bp3>_ 1 "STD_CODE2" "{$PROJ_DIR$\_init.c}.368.1" 0 0 1 "" 0 ""</Bp3>
-        <Bp4>_ 1 "STD_CODE2" "{$PROJ_DIR$\xy_figure.c}.325.1" 0 0 1 "" 0 ""</Bp4>
-        <Count>5</Count>
+        <Count>4</Count>
     </Breakpoints2>
     <Interrupts>
         <Enabled>1</Enabled>

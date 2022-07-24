@@ -12,6 +12,11 @@ extern void Data_Check(void);
 extern void XY_Data(void);
 extern void laser_control(void);
 
+//베지어 함수용
+extern void Bezier_Straight(void);
+extern uint8_t Bezier_Direction(void);
+extern void Bezier_Coordinate_Make(void);
+
 //extern void Bezier(void);
 
 #endif
